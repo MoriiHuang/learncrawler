@@ -29,8 +29,8 @@ data={
 '__VIEWSTATE':VIEWSTATE,
 '__VIEWSTATEGENERATOR':VIEWSTATEGEN,
 'from': 'http://so.gushiwen.cn/user/collect.aspx',
-'email': 'nv5110911jiaobei7@163.com',
-'pwd': '1513120xxy',
+'email': '',
+'pwd': '',
 'code': result,
 'denglu': '登录'
 }
