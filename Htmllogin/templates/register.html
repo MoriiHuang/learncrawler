@@ -1,0 +1,35 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="load.css">
+</head>
+<body>
+<div id="app">
+<div class="box">
+    <div class="left"></div>
+    <div class="right">
+        <h4>注册</h4>
+    <form action="" method="post" class="word">
+            <input class="acc" name="author" type="text" placeholder="用户名">
+            <input class="acc" name="code" type="password" placeholder="密码">
+            <input class="acc" name="agree" type="agree" placeholder="验证码">
+            <input class="submit" type="submit" value="Login">
+    </form>
+    </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="vue.js"></script>
+<script src="/static/main.js"></script>
+<script>
+    {% if ans %}
+        alert("注册成功！")
+        window.location.href='http://10.166.224.160:5000/load';
+    {% endif %}
+    {%if ans==0%}
+        alert("注册失败，请联系管理员获取正确的验证码");
+    {%endif%}
+</script>
+</html>

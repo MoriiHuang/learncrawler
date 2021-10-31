@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二次元登陆</title>
+    <link rel="stylesheet" href="load.css">
+</head>
+<body>
+<div id="app">
+<div class="toptop" v-if="isShow===1" >
+    <button class="you" @click="change">星河如你</button>
+</div>
+<!--    <div>-->
+<!--        <video width="320" height="240" controls>-->
+<!--        <source src="/static/load.mp4" type="video/mp4">-->
+<!--    </video>-->
+<!--    </div>-->
+<div class="box" v-if="isShow===0">
+    <div class="left"></div>
+    <div class="right">
+        <h4>登陆</h4>
+        <form action="" method="post" class="word">
+            <input class="acc" name="user" type="text" placeholder="用户名">
+            <input class="acc" name="password" type="password" placeholder="密码">
+            <input class="submit" type="submit" value="Login">
+        </form>
+        <div class="fn">
+        <a @click="register">注册账号</a>
+        <a @click="changecode">修改密码</a>
+    </div>
+    </div>
+    </div>
+</div>
+<div v-if="isShow===0">
+<div class="top"></div>
+<div class="top1"></div>
+<div class="top2"></div>
+<div class="top3"></div>
+<div class="top4"></div>
+<div class="top5"></div>
+<div class="top6"></div>
+<div class="top7"></div>
+<div class="textCenter">
+<!--<video width="320" height="240" controls>-->
+<!--        <source src="https://video.pearvideo.com/mp4/third/20210205/cont-1719514-12719568-200628-hd.mp4" type="video/mp4">-->
+<!--    </video>-->
+<!--</div>-->
+</div>
+</div>
+</body>
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript" src="/static/main.js"></script>
+<script>
+    {% if fail==1%}
+		alert('没有该用户，请注册')
+	{% endif %}
+    {% if fail==2%}
+		alert('密码错误，请重新输入密码')
+	{% endif %}
+</script>
+</html>
