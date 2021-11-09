@@ -75,7 +75,7 @@ def getAllfollow():
                 imgs_url.append(img_url)
             follower.append({'id':id,'username':username,'img_id':imgs_id,'img_title':imgs_title,'img_url':imgs_url})
         followers.append(follower)
-    while(len(ids)<10000):
+    while(len(id_used)<10000):
         cur_id=ids.popleft()
         id_used.append(cur_id)
         followers.append(getSinglefollow1(cur_id))
