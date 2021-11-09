@@ -76,8 +76,8 @@ def getAllfollow():
         followers.append(follower)
     while(len(ids)<10000):
         cur_id=ids.popleft()
-        followers.append(getSinglefollow1(cur_id))
         id_used.append(cur_id)
+        followers.append(getSinglefollow1(cur_id))
     return followers
 res=getAllfollow()
 dumptojson(res)
