@@ -16,7 +16,7 @@ def getSinglefollow1(id):
     }
     url = 'https://www.pixiv.net/ajax/user/'+id+'/following?offset=0&limit=24&rest=show&tag=&lang=zh'
     response =requests.get(url, headers=headers).json()
-    total = users = response['body']['total']
+    total = response['body']['total']
     for i in range(0,total,24):
         url='https://www.pixiv.net/ajax/user/'+id+'/following?offset='+str(i*24)+'&limit=24&rest=show&tag=&lang=zh'
         response = requests.get(url, headers=headers).json()
@@ -38,11 +38,10 @@ def getSinglefollow1(id):
                 imgs_title.append(img_title)
                 imgs_url.append(img_url)
             follower.append({'id': id, 'username': username, 'img_id': imgs_id, 'img_title': imgs_title, 'img_url': imgs_url})
-            print(follower)
     return follower
 def getAllfollow():
     global repeat
-    follower=[{'main_id':6662895}]
+    follower=[{'main_id':'6662895'}]
     s=requests.session()
     url = 'https://www.pixiv.net/ajax/user/6662895/following?offset=0&limit=24&rest=show&tag=&lang=zh'
     headers1 = {
