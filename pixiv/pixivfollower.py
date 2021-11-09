@@ -25,19 +25,20 @@ def getSinglefollow1(id):
             id = user['userId']
             if(id not in id_used):
                 ids.append(id)
-                username = user['userName']
-                illusts = user['illusts']
-                imgs_id = []
-                imgs_title = []
-                imgs_url = []
-                for illust in illusts:
-                    img_id = illust['id']
-                    img_title = illust['title']
-                    img_url = illust['url']
-                    imgs_id.append(img_id)
-                    imgs_title.append(img_title)
-                    imgs_url.append(img_url)
-                follower.append({'id': id, 'username': username, 'img_id': imgs_id, 'img_title': imgs_title, 'img_url': imgs_url})
+            username = user['userName']
+            illusts = user['illusts']
+            imgs_id = []
+            imgs_title = []
+            imgs_url = []
+            for illust in illusts:
+                img_id = illust['id']
+                img_title = illust['title']
+                img_url = illust['url']
+                imgs_id.append(img_id)
+                imgs_title.append(img_title)
+                imgs_url.append(img_url)
+            follower.append({'id': id, 'username': username, 'img_id': imgs_id, 'img_title': imgs_title, 'img_url': imgs_url})
+            print(follower)
     return follower
 def getAllfollow():
     global repeat
@@ -78,6 +79,7 @@ def getAllfollow():
         cur_id=ids.popleft()
         id_used.append(cur_id)
         followers.append(getSinglefollow1(cur_id))
+    print(len(ids))
     return followers
 res=getAllfollow()
 dumptojson(res)
